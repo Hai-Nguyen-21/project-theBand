@@ -1,0 +1,100 @@
+/* reset css */
+*{padding: 0; margin: 0; box-sizing: border-box;}
+
+html{
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/* #main{
+
+} */
+
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 46px;
+    background-color: black;
+}
+
+#nav{
+    display: inline-block;
+    /* cái này dùng để giới hạn lại, phạm vi đến đâu
+    dùng đến đó thui chứ không nó kế thừa hết chiều rộng */
+}
+
+#nav > li{
+    display: inline-block; 
+}
+
+#nav li{
+    /* inline tức là 1 hàng, block là để nó giữ nguyên khối */
+    position: relative;
+}
+
+#nav, .subnav{
+    list-style: none;
+}
+
+/* làm cách này để kh bị dính vào sub nav */
+#nav > li > a{
+    color: #ffff;
+    /* chuyển đổi chữ hoa */
+    text-transform: uppercase;
+}
+
+#nav li a{
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    font-size: 15px;
+    display: inline-block;
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav .subnav li:hover,
+#nav > li:hover > a{
+    color: black;
+    background-color: #cccc;
+}
+
+#nav .subnav{
+    /* display là thuộc tính liên quan đến phần hiển thị */
+    display: none;
+    /* dùng như này để ví dụ mai sau chiều ngang có tăng nso cx tăng theo  */
+    min-width: 160px;
+    position: absolute;
+    background-color: #ffff;
+    color: black;
+    box-shadow: 0 0 8px rgba(0 0 0.3);
+}
+
+#nav .subnav a{
+    color: black;
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+#header .search-btn{
+    color: #fff;
+    float: right;
+    padding: 0 21px;
+    line-height: 46px;
+}
+
+#header .search-btn:hover{
+    color: #ffff;
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#slider{
+    /* thêm thuộc tính này vì khi dùng fixed làm header 
+    thì cái nav đấy đè lên slider ta phải margin slider xuống
+    để khỏi bị che */
+    margin-top: 46px;
+}

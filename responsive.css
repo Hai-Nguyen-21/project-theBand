@@ -1,0 +1,88 @@
+/* PC */
+@media (min-width: 64em){
+    .member-list .member-item{
+        float: left;
+    }
+}
+/* các điểm giao giữa các @media được gọi là BREAK POINT */
+/* tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em){
+    .member-list .member-item{
+        float: left;
+    }
+
+    .contact-info{
+        line-height: 2;
+    }
+}
+
+/* mobile and tablet */
+@media(max-width: 63.9375em){
+
+
+    #footer .social-list{
+        font-size: 38px;
+    }
+
+    #footer .social-list a{
+        margin: 0 8px;
+    }
+}
+
+/* mobile */
+@media(max-width: 46.1875em){
+
+    .s-full-width{
+        width: 100%  !important;
+    }
+
+    #nav{
+        display: block;
+    }
+
+    #nav > li{
+        display: block;
+    }
+
+    #nav .subnav{
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a{
+        color: white;
+        padding: 3px 36px;
+    }
+
+    #header{
+        overflow: hidden;
+    }
+
+    #header .mobile-menu-btn{
+        display: block;
+    }
+
+    #header .search-btn{
+        display: none;
+    }
+
+    .member-list .member-item{
+        padding-left: 120px;
+        text-align: center;
+    }
+
+    .place-item{
+        width: 100%;
+        padding: 9px 8px;
+    }
+
+    .place-buy-btn{
+        text-align: center;
+    }
+
+    .contact-btn,
+    .contact-info{
+        width: 100%;
+        padding-top: 16px;
+    }
+}

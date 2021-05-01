@@ -1,0 +1,355 @@
+/* reset css */
+*{padding: 0; margin: 0; box-sizing: border-box;}
+
+html{
+    /* cái này để lăn trang mượt hơn */
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.clear{
+    clear: both;
+}
+
+.text-white{
+    color: #ffff !important;
+}
+
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-full{
+    width: 100%;
+}
+
+.col-half{
+    width: 50%;
+}
+
+/* #main{
+
+} */
+
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 46px;
+    background-color: black;
+    /* z-index , trong trục tọa độ có x và y là áp dụng trên mặt phẳng
+    z là trong không gian, làm vậy để cho thanh nav kh bị chìm xuống slider*/
+    z-index: 1;
+}
+
+#nav{
+    display: inline-block;
+    /* cái này dùng để giới hạn lại, phạm vi đến đâu
+    dùng đến đó thui chứ không nó kế thừa hết chiều rộng */
+}
+
+#nav > li{
+    display: inline-block; 
+}
+
+#nav li{
+    /* inline tức là 1 hàng, block là để nó giữ nguyên khối */
+    position: relative;
+}
+
+#nav, .subnav{
+    list-style: none;
+}
+
+/* làm cách này để kh bị dính vào sub nav */
+#nav > li > a{
+    color: #ffff;
+    /* chuyển đổi chữ hoa */
+    text-transform: uppercase;
+}
+
+#nav li a{
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    font-size: 15px;
+    display: inline-block;
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav .subnav li:hover,
+#nav > li:hover > a{
+    color: black;
+    background-color: #cccc;
+}
+
+#nav .subnav{
+    /* display là thuộc tính liên quan đến phần hiển thị */
+    display: none;
+    /* dùng như này để ví dụ mai sau chiều ngang có tăng nso cx tăng theo  */
+    min-width: 160px;
+    position: absolute;
+    background-color: #ffff;
+    color: black;
+    box-shadow: 0 0 8px rgba(0 0 0.3);
+}
+
+#nav .subnav a{
+    color: black;
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
+#header .search-btn{
+    color: #fff;
+    float: right;
+    padding: 0 21px;
+    line-height: 46px;
+}
+
+#header .mobile-menu-btn:hover{
+    color: black;
+    background-color: #ccc;
+}
+
+#header .search-btn:hover{
+    color: #ffff;
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#slider{
+    /* thêm thuộc tính này vì khi dùng fixed làm header 
+    thì cái nav đấy đè lên slider ta phải margin slider xuống
+    để khỏi bị che */
+    position: relative;
+    margin-top: 46px;
+    /* đặt padding top nếu value là % thì tức là lấy 1/2 chiều dài của nó */
+    padding-top: 50%;
+    background-image: url('../w3_project1_band/asses/img/slider1.jpg');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* phần chèn link ảnh là background-image / center top là background-position 
+    / phần cuối là background-size và background-repeat */
+    
+}
+#slider .text-content{
+    position: absolute;
+    color: #ffff;
+    /* bottom là để đẩy chữ lên */
+    bottom: 47px;
+    /* w100% để căn chữ ra giữa */
+    width: 100%;
+    text-align: center;
+}
+#slider .text-heading{
+    font-size: 24px;
+    font-weight: 500;
+}
+#slider .text-description{
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+#content .content-section{
+    width: 800px;
+    max-width: 100%;
+    /* cho thuộc tính auto vậy để căn giữa, đỡ phải đo */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+#content .head-section{
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+#content .sub-section{
+    font-size: 15px;
+    opacity: 0.6;
+}
+#content .about-txt{
+    font-size: 15px;
+    margin-top: 25px;
+    /* cái này để căn đều 2 bên */
+    text-align: justify;
+    line-height: 1.4;
+}
+.member-list .member-item{
+    /* float: left; */
+    padding-top: 47px;
+    text-align: center;
+    width: 33.333333%;
+}
+#member-item .member-name{
+    font-size: 15px;
+}
+.member-item .member-img{
+    border-radius: 4px;
+    width: 154px;
+    padding-top: 15px;
+}
+.tour-section{
+    background: black;
+}
+.ticket-section{
+    background-color: white;
+    margin-top: 40px;
+}
+.ticket-section li{
+    list-style: none;
+    color: #757575;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+}
+.ticket-section .sold-out{
+    background-color: #f44336;
+    color: #ffff !important;
+    padding: 3px 4px;
+    margin-left: 16px;
+}
+.ticket-section .quantity{
+    background-color: black;
+    float: right;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    width: 24px;
+    margin-top: -3px;
+}
+.place-list{
+    margin-top: 32px;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-bottom: 48px;
+}
+.place-item{
+    float: left;
+    width: 33.333%;
+    padding: 0 8px;
+}
+.place-img{
+    width: 100%;
+    display: block;
+}
+.place-img:hover{
+    opacity: 0.6;
+}
+.place-body{
+    background-color: #ffff;
+    padding: 16px;
+    font-size: 15px;
+}
+.place-heading{
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+.place-time{
+    opacity: 0.6;
+    margin-top: 15px;
+}
+.place-desc{
+    margin-top: 15px;
+}
+.place-buy-btn{
+    margin-top: 18px;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 11px 16px;
+    display: inline-block;
+}
+.place-buy-btn:hover{
+    background-color: #ccc;
+    color: black;
+}
+.contact-content{
+    margin-top: 48px;
+}
+.contact-info{
+    font-size: 18px;
+    line-height: 1.4;
+}
+.contact-info p i{
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-info a{
+    opacity: 0.8;
+}
+.contact-info a:hover{
+    opacity: 1;
+}
+
+.col-half form{
+    font-size: 15px;
+}
+.col .form-control{
+    padding: 11px 5px;
+    width: 100%;
+}
+.col .col-full{
+    padding-top: 16px;
+}
+.form-buy-btn{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 16px 0;
+    float: right;
+    cursor: pointer;
+}
+.form-buy-btn:hover{
+    background-color: #ccc;
+    color: black;
+}
+.map-img{
+    padding-top: 64px;
+    width: 100%;
+}
+#footer{
+    padding: 64px 0;
+    text-align: center;
+}
+#footer .social-list{
+    padding-bottom: 15px;
+    font-size: 21px;
+}
+.copy-right,
+.social-list i{
+    color: black;
+    opacity: 0.6;
+}
+.social-list i:hover{
+    color: rgba(0, 0, 0, 0.4);
+}
+/* DONE 9:50 4/28/2021 */
